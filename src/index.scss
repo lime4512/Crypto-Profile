@@ -1,4 +1,4 @@
-@import url(./style/variable.scss);
+@import './style/variable';
 
 * {
 	margin: 0;
@@ -8,7 +8,7 @@
 body {
 	color: $primal-color;
 	background-color: $primal_background-color;
-	font: 400 16/28px 'Roboto', sans-serif;
+	font: 400 16px/28px 'Roboto', sans-serif;
 }
 
 h1 h2 h3 h4 {
