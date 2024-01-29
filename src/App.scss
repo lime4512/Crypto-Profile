@@ -1,0 +1,15 @@
+.container {
+	margin: 0 130px;
+	padding: 0 20px;
+}
+
+main {
+	display: flex;
+	.main-TrackCoin {
+		width: 30%;
+	}
+
+	.main-coin {
+		width: 70%;
+	}
+}

@@ -1,0 +1,12 @@
+header {
+	background-color: rgb(38, 0, 255);
+}
+
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	div {
+		display: flex;
+	}
+}
