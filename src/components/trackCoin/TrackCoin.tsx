@@ -4,9 +4,9 @@ import '../../style/trackCoin/trackCoin.scss'
 import { useEffect, useState } from 'react'
 import { Select, Space } from 'antd'
 import { ModalCoin } from './ModalCoin.tsx'
+import { SelectorTrack } from './SelectorTrack.tsx'
 
 export const TrackCoin = observer(() => {
-	
 	const { coins, getCoins } = StoreCoin
 	const [modal, setModal] = useState(false)
 	const [infoCoin, setInfoCoin] = useState()
@@ -56,6 +56,8 @@ export const TrackCoin = observer(() => {
 					infoCoin={infoCoin}
 				/>
 			</div>
+
+			<SelectorTrack />
 		</section>
 	)
 })
