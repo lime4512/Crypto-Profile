@@ -1,6 +1,7 @@
 import { Modal } from 'antd'
 import { FunctionComponent, useEffect, useState } from 'react'
 import '../../style/trackCoin/modalCoin.scss'
+import StoreCoin from '../../store/storeCoin'
 
 interface Props {
 	modal: boolean
@@ -33,12 +34,33 @@ export const ModalCoin: FunctionComponent<Props> = ({
 		setOpen(false)
 		setModal()
 	}
+	const handelInfoCoin = () => {
+		StoreCoin.addCoin({
+			name: infoCoin?.name,
+			price_usd: infoCoin?.price_usd,
+			symbol: infoCoin?.symbol,
+			volume24: infoCoin?.volume24,
+			percent_change_1h: infoCoin?.percent_change_1h,
+			percent_change_7d: infoCoin?.percent_change_7d,
+			percent_change_24h: infoCoin?.percent_change_24h,
+		})
+		setOpen(false)
+		setModal()
+	}
 	return (
 		<>
 			<Modal
 				open={open}
 				onCancel={handleCancel}
-				footer={[<button className='modalInfo-btn'>track currency</button>]}
+				footer={[
+					<button
+						className='modalInfo-btn'
+						onClick={handelInfoCoin}
+						key='submit'
+					>
+						track currency
+					</button>,
+				]}
 			>
 				<div className='modalInfo-title-cont'>
 					<img

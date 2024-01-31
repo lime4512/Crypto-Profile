@@ -1,9 +1,34 @@
 import { makeAutoObservable, runInAction } from 'mobx'
 import axios from 'axios'
+
+type TypeCoin = {
+	name: string | undefined
+	price_usd: string | undefined
+	symbol: string | undefined
+	volume24: number | undefined
+	percent_change_1h: string | undefined
+	percent_change_7d: string | undefined
+	percent_change_24h: string | undefined
+}
+
 class StoreCoin {
 	coins = []
+
+	coinsList: TypeCoin[] = []
 	constructor() {
 		makeAutoObservable(this)
+	}
+
+	addCoin(item: {
+		name: string | undefined
+		price_usd: string | undefined
+		symbol: string | undefined
+		volume24: number | undefined
+		percent_change_1h: string | undefined
+		percent_change_7d: string | undefined
+		percent_change_24h: string | undefined
+	}) {
+		this.coinsList.push(item)
 	}
 
 	getCoins = async () => {
