@@ -2,16 +2,18 @@ import { observer } from 'mobx-react-lite'
 import StoreCoin from '../../store/storeCoin.ts'
 import '../../style/trackCoin/trackCoin.scss'
 import { useEffect, useState } from 'react'
-import { Select } from 'antd'
+import { Select, Space } from 'antd'
 import { ModalCoin } from './ModalCoin.tsx'
+
 export const TrackCoin = observer(() => {
+	
 	const { coins, getCoins } = StoreCoin
 	const [modal, setModal] = useState(false)
 	const [infoCoin, setInfoCoin] = useState()
 
 	useEffect(() => {
 		getCoins()
-	}, [])
+	}, [getCoins])
 
 	const handelSetModal = () => {
 		setModal(false)
@@ -24,7 +26,7 @@ export const TrackCoin = observer(() => {
 		<section className='trackCoin'>
 			<Select
 				value='open'
-				style={{ width: 120 }}
+				style={{ width: 140 }}
 				onChange={handleChange}
 				options={coins.map(
 					(i: { symbol: string; id: string; name: string }) => ({
@@ -32,6 +34,18 @@ export const TrackCoin = observer(() => {
 						value: i.id,
 						icon: i.symbol,
 					})
+				)}
+				optionRender={option => (
+					<Space>
+						<div className='space-content'>
+							<img
+								src={'/imgCoin/' + option.data.icon.toLowerCase() + '.png'}
+								alt=''
+								style={{ width: 20 }}
+							/>
+							{option.data.label}
+						</div>
+					</Space>
 				)}
 			/>
 

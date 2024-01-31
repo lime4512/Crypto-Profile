@@ -1,5 +1,6 @@
-import { Button, Modal } from 'antd'
+import { Modal } from 'antd'
 import { FunctionComponent, useEffect, useState } from 'react'
+import '../../style/trackCoin/modalCoin.scss'
 
 interface Props {
 	modal: boolean
@@ -25,13 +26,8 @@ export const ModalCoin: FunctionComponent<Props> = ({
 		<>
 			<Modal
 				open={open}
-				title='Title'
 				onCancel={handleCancel}
-				footer={[
-					<Button key='link' href='https://google.com' type='primary'>
-						Search on Google
-					</Button>,
-				]}
+				footer={[<button>track currency</button>]}
 			>
 				<h1>{infoCoin == undefined || infoCoin.name}</h1>
 				<p>Some contents...</p>
