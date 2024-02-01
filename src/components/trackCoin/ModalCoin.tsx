@@ -1,7 +1,9 @@
-import { Modal } from 'antd'
+import { Modal, notification } from 'antd'
 import { FunctionComponent, useEffect, useState } from 'react'
 import '../../style/trackCoin/modalCoin.scss'
 import StoreCoin from '../../store/storeCoin'
+
+type NotificationType = 'success' | 'info' | 'warning' | 'error'
 
 interface Props {
 	modal: boolean
@@ -27,15 +29,18 @@ export const ModalCoin: FunctionComponent<Props> = ({
 	infoCoin,
 }) => {
 	const [open, setOpen] = useState(false)
+	const [api, contextHolder] = notification.useNotification()
+
 	useEffect(() => {
 		setOpen(modal)
 	}, [modal])
+
 	const handleCancel = () => {
 		setOpen(false)
 		setModal()
 	}
 	const handelInfoCoin = () => {
-		StoreCoin.addCoin({
+		const objCoin = {
 			name: infoCoin?.name,
 			price_usd: infoCoin?.price_usd,
 			symbol: infoCoin?.symbol,
@@ -43,12 +48,28 @@ export const ModalCoin: FunctionComponent<Props> = ({
 			percent_change_1h: infoCoin?.percent_change_1h,
 			percent_change_7d: infoCoin?.percent_change_7d,
 			percent_change_24h: infoCoin?.percent_change_24h,
-		})
+		}
+		if (
+			StoreCoin.coinsList.findIndex(obj => obj.name === objCoin.name) !== -1
+		) {
+			console.log(`Объект уже существует в коллекции.`)
+			openNotificationWithIcon('info')
+		} else {
+			StoreCoin.addCoin(objCoin)
+		}
 		setOpen(false)
 		setModal()
 	}
+
+	//notification
+	const openNotificationWithIcon = (type: NotificationType) => {
+		api[type]({
+			message: 'This currency is tracked',
+		})
+	}
 	return (
 		<>
+			{contextHolder}
 			<Modal
 				open={open}
 				onCancel={handleCancel}
