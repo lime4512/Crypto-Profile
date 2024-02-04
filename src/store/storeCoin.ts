@@ -31,6 +31,21 @@ class StoreCoin {
 		this.coinsList.push(item)
 	}
 
+	removeCoin(item: {
+		name: string | undefined
+		price_usd: string | undefined
+		symbol: string | undefined
+		volume24: number | undefined
+		percent_change_1h: string | undefined
+		percent_change_7d: string | undefined
+		percent_change_24h: string | undefined
+	}) {
+		const index = this.coinsList.indexOf(item)
+		if (index !== -1) {
+			this.coinsList.splice(index, 1)
+		}
+	}
+
 	getCoins = async () => {
 		axios
 			.get(

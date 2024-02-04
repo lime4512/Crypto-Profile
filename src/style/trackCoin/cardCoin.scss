@@ -4,10 +4,7 @@
 	color: black;
 	border-radius: 10px;
 	margin-bottom: 10px;
-	.select-card-name {
-		font-size: 13px;
-		color: rgb(100, 98, 98);
-	}
+
 	.select-card-total-price {
 		display: flex;
 		align-items: center;
@@ -32,3 +29,18 @@
 	}
 }
 
+.select-card-name-btn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	.select-card-name {
+		font-size: 13px;
+		margin: 0;
+		color: rgb(100, 98, 98);
+	}
+	.select-card-btn {
+		width: 20px;
+		height: 20px;
+		background-color: inherit;
+	}
+}

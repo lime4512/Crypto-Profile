@@ -2,7 +2,8 @@ import StoreCoin from '../../store/storeCoin'
 import '../../style/trackCoin/selectorCoin.scss'
 import { CarouselCoin } from './CarouselCoin'
 import { CardCoin } from './CardCoin'
-export const SelectorTrack = () => {
+import { observer } from 'mobx-react-lite'
+export const SelectorTrack = observer(() => {
 	return (
 		<ul className='select-content'>
 			{StoreCoin.coinsList.length != 0 ? (
@@ -16,6 +17,7 @@ export const SelectorTrack = () => {
 							percent_change_1h={item.percent_change_1h}
 							percent_change_24h={item.percent_change_24h}
 							percent_change_7d={item.percent_change_7d}
+							item={item}
 						/>
 					))
 				) : (
@@ -26,4 +28,4 @@ export const SelectorTrack = () => {
 			)}
 		</ul>
 	)
-}
+})

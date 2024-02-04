@@ -11,7 +11,11 @@ export const CarouselCoin = () => {
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		vertical: true,
-		speed: 500,
+		autoplay: true,
+		speed: 2000,
+		autoplaySpeed: 2000,
+		arrows: false,
+		pauseOnHover: false,
 	}
 	return (
 		<>
@@ -26,6 +30,7 @@ export const CarouselCoin = () => {
 							percent_change_1h={item.percent_change_1h}
 							percent_change_24h={item.percent_change_24h}
 							percent_change_7d={item.percent_change_7d}
+							item={item}
 						/>
 					))
 				) : (
