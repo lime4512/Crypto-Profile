@@ -1,0 +1,22 @@
+.modalInfo-percent {
+	display: flex;
+	gap: 10px;
+
+	span {
+		border: 1px solid rgb(41, 175, 7);
+		padding: 0px 5px;
+		font-size: 14px;
+		color: rgb(41, 175, 7);
+		border-radius: 5px;
+		background-color: rgba($color: #48ff00, $alpha: 0.1);
+	}
+
+	.span-red {
+		border: 1px solid rgb(212, 15, 15);
+		padding: 0px 5px;
+		font-size: 14px;
+		color: rgb(212, 15, 15);
+		border-radius: 5px;
+		background-color: rgba($color: #bb230f, $alpha: 0.1);
+	}
+}

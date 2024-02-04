@@ -2,37 +2,3 @@
 	margin-top: 10px;
 	margin-right: 10px;
 }
-
-.select-card {
-	background-color: white;
-	padding: 10px 20px;
-	color: black;
-	border-radius: 10px;
-	margin-bottom: 10px;
-	.select-card-name {
-		font-size: 13px;
-		color: rgb(100, 98, 98);
-	}
-	.select-card-total-price {
-		display: flex;
-		align-items: center;
-		margin-bottom: 10px;
-		.select-card-price {
-			font-size: 30px;
-			margin: 0 0 0 10px;
-			color: rgb(31, 27, 27);
-		}
-	}
-	.select-card-img {
-		width: 50px;
-		height: 50px;
-	}
-
-	.select-card-volume {
-		color: rgb(100, 98, 98);
-		font-size: 17px;
-		.select-card-volume-strong {
-			color: black;
-		}
-	}
-}

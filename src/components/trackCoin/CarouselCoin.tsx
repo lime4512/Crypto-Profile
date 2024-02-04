@@ -1,12 +1,22 @@
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import Slider from 'react-slick'
 import StoreCoin from '../../store/storeCoin'
-import '../../style/trackCoin/selectorCoin.scss'
-import { CarouselCoin } from './CarouselCoin'
 import { CardCoin } from './CardCoin'
-export const SelectorTrack = () => {
+
+export const CarouselCoin = () => {
+	const settings = {
+		dots: false,
+		infinite: true,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		vertical: true,
+		speed: 500,
+	}
 	return (
-		<ul className='select-content'>
-			{StoreCoin.coinsList.length != 0 ? (
-				StoreCoin.coinsList.length <= 4 ? (
+		<>
+			<Slider {...settings}>
+				{StoreCoin.coinsList.length != 0 ? (
 					StoreCoin.coinsList.map(item => (
 						<CardCoin
 							name={item.name}
@@ -19,11 +29,9 @@ export const SelectorTrack = () => {
 						/>
 					))
 				) : (
-					<CarouselCoin />
-				)
-			) : (
-				<li>Currency is not tracked</li>
-			)}
-		</ul>
+					<h1>false</h1>
+				)}
+			</Slider>
+		</>
 	)
 }

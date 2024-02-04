@@ -2,6 +2,7 @@ import { Modal, notification } from 'antd'
 import { FunctionComponent, useEffect, useState } from 'react'
 import '../../style/trackCoin/modalCoin.scss'
 import StoreCoin from '../../store/storeCoin'
+import { ModalInfo } from './ModalInfo'
 
 type NotificationType = 'success' | 'info' | 'warning' | 'error'
 
@@ -83,54 +84,17 @@ export const ModalCoin: FunctionComponent<Props> = ({
 					</button>,
 				]}
 			>
-				<div className='modalInfo-title-cont'>
-					<img
-						src={'/imgCoin/' + infoCoin?.symbol.toLowerCase() + '.png'}
-						alt=''
-						className='modalInfo-title-img'
-					/>
-					<h1 className='modalInfo-title'>
-						({infoCoin?.symbol}) {infoCoin?.name}
-					</h1>
-				</div>
-				<div className='modalInfo-percent'>
-					<p>
-						<strong>1 hour: </strong>
-						{Number(infoCoin?.percent_change_1h) > 0 ? (
-							<span>{infoCoin?.percent_change_1h}%</span>
-						) : (
-							<span className='span-red'>{infoCoin?.percent_change_1h}%</span>
-						)}
-					</p>
-					<p>
-						<strong>1 day: </strong>
-						{Number(infoCoin?.percent_change_24h) > 0 ? (
-							<span>{infoCoin?.percent_change_24h}%</span>
-						) : (
-							<span className='span-red'>{infoCoin?.percent_change_24h}%</span>
-						)}
-					</p>
-					<p>
-						<strong>1 week: </strong>
-						{Number(infoCoin?.percent_change_7d) > 0 ? (
-							<span>{infoCoin?.percent_change_7d}%</span>
-						) : (
-							<span className='span-red'>{infoCoin?.percent_change_7d}%</span>
-						)}
-					</p>
-				</div>
-				<p>
-					<strong>Price:</strong> {infoCoin?.price_usd} $
-				</p>
-				<p>
-					<strong>Price BTC:</strong> {infoCoin?.price_btc}
-				</p>
-				<p>
-					<strong>Market Cap:</strong> {infoCoin?.market_cap_usd} $
-				</p>
-				<p>
-					<strong>Volume:</strong> {infoCoin?.volume24} $
-				</p>
+				<ModalInfo
+					name={infoCoin?.name}
+					symbol={infoCoin?.symbol}
+					percent_change_1h={infoCoin?.percent_change_1h}
+					percent_change_24h={infoCoin?.percent_change_24h}
+					percent_change_7d={infoCoin?.percent_change_7d}
+					price_usd={infoCoin?.price_usd}
+					price_btc={infoCoin?.price_btc}
+					market_cap_usd={infoCoin?.market_cap_usd}
+					volume24={infoCoin?.volume24}
+				/>
 			</Modal>
 		</>
 	)
