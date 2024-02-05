@@ -1,12 +1,14 @@
 header {
-	background-color: rgb(38, 0, 255);
+	background-color: rgb(86, 78, 133);
 }
 
 .header-content {
 	display: flex;
 	justify-content: space-between;
 	padding: 10px 0;
-	div {
+	align-items: center;
+	.header-btn-container {
 		display: flex;
+		gap: 10px;
 	}
 }

@@ -1,0 +1,8 @@
+.header-btn {
+	padding: 5px 20px;
+	background-color: rgb(0, 89, 255);
+	border-radius: 5px;
+	&:hover {
+		background-color: rgb(62, 124, 240);
+	}
+}
