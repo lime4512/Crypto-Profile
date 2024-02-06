@@ -20,7 +20,7 @@ export const Header = () => {
 				<div className='header-content'>
 					<h1>Logo</h1>
 					<div className='header-btn-container'>
-						<HeaderButton onClick={showDrawer}>Add</HeaderButton>
+						<HeaderButton onClick={showDrawer}>Add coin</HeaderButton>
 					</div>
 					<DrawerWindow open={open} onClose={onClose} />
 				</div>
