@@ -29,10 +29,10 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 		const handleSubmit = (e: React.FormEvent) => {
 			e.preventDefault()
 			const amountObj = {
+				key: Math.random.toString(),
 				name: name,
 				amount: amount,
 				priceInp: priceInp,
-				key: Math.random().toString(),
 			}
 			StoreCoin.addAmountCoins(amountObj)
 			onClose()
