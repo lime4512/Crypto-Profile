@@ -10,10 +10,11 @@ interface Props {
 	symbol: string
 	name: string
 	onClose: () => void
+	HandelDelCoin: () => void
 }
 
 export const DrawerInp: FunctionComponent<Props> = observer(
-	({ price, symbol, name, onClose }) => {
+	({ price, symbol, name, onClose, HandelDelCoin }) => {
 		const [amount, setAmount] = useState<number>()
 		const [priceInp, setPriceInp] = useState<number>()
 
@@ -37,6 +38,7 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 			StoreCoin.addAmountCoins(amountObj)
 			onClose()
 			openNotificationWithIcon()
+			HandelDelCoin()
 		}
 
 		const [api, contextHolder] = notification.useNotification()
@@ -44,6 +46,7 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 		const openNotificationWithIcon = () => {
 			api['success']({
 				message: 'Currency in wallet',
+				placement: 'bottomRight',
 			})
 		}
 		return (

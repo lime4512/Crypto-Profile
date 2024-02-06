@@ -69,7 +69,11 @@ export const DrawerWindow: FunctionComponent<Props> = observer(
 							)}
 						/>
 					) : (
-						<DrawerForm dataCoin={infoCoin} onClose={onClose} />
+						<DrawerForm
+							dataCoin={infoCoin}
+							onClose={onClose}
+							HandelDelCoin={HandelDelCoin}
+						/>
 					)}
 				</div>
 			</Drawer>

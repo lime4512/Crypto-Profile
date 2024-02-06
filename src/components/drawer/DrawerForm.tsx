@@ -8,9 +8,14 @@ interface Props {
 		price_usd: string
 	}
 	onClose: () => void
+	HandelDelCoin: () => void
 }
 
-export const DrawerForm: FunctionComponent<Props> = ({ dataCoin, onClose }) => {
+export const DrawerForm: FunctionComponent<Props> = ({
+	dataCoin,
+	onClose,
+	HandelDelCoin,
+}) => {
 	return (
 		<div className='form'>
 			<div className='form-title-content'>
@@ -26,6 +31,7 @@ export const DrawerForm: FunctionComponent<Props> = ({ dataCoin, onClose }) => {
 				symbol={dataCoin.symbol}
 				name={dataCoin.name}
 				onClose={onClose}
+				HandelDelCoin={HandelDelCoin}
 			/>
 		</div>
 	)
