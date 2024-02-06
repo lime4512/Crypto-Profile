@@ -2,6 +2,7 @@ import { FunctionComponent, useEffect, useState } from 'react'
 import { ChangeEvent } from 'react'
 import { notification } from 'antd'
 import { HeaderButton } from '../header/HeaderButton'
+import '../../style/drawer/drawerInp.scss'
 interface Props {
 	price: string
 	symbol: string
@@ -45,25 +46,29 @@ export const DrawerInp: FunctionComponent<Props> = ({
 		<>
 			{contextHolder}
 			<form className='form-amount' onSubmit={handleSubmit}>
-				<label>Amount:</label>
-				<input
-					type='number'
-					placeholder='Write amount'
-					value={amount || ''}
-					onChange={handelAmount}
-					className='form-inp'
-				/>
-				<label>Price usd:</label>
-				<input
-					type='number'
-					value={priceInp || ''}
-					readOnly
-					className='form-inp'
-				/>
-				<span>
+				<div className='form-amount-content mb'>
+					<label className='form-label'>Amount:</label>
+					<input
+						type='number'
+						placeholder='Write amount'
+						value={amount || ''}
+						onChange={handelAmount}
+						className='form-inp'
+					/>
+				</div>
+				<div className='form-amount-content'>
+					<label className='form-label'>Price usd:</label>
+					<input
+						placeholder='Price'
+						type='number'
+						value={priceInp || ''}
+						readOnly
+						className='form-inp'
+					/>
+				</div>
+				<span className='form-inp-clue'>
 					1-{symbol}: {price}$
 				</span>
-
 				<HeaderButton>Add Coins</HeaderButton>
 			</form>
 		</>
