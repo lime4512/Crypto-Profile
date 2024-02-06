@@ -1,17 +1,6 @@
 import '../../style/walletCoin/walletCoin.scss'
-
-export const WalletCoin = () => {
-	return (
-		<section className='walletCoin'>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-			<h1>walletCoin</h1>
-		</section>
-	)
-}
+// import StoreCoin from '../../store/storeCoin'
+import { observer } from 'mobx-react-lite'
+export const WalletCoin = observer(() => {
+	return <section className='walletCoin'></section>
+})

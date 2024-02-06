@@ -11,12 +11,30 @@ type TypeCoin = {
 	percent_change_24h: string | undefined
 }
 
+type TypeAmount = {
+	key: string | undefined
+	name: string | undefined
+	amount: number | undefined
+	priceInp: number | undefined
+}
 class StoreCoin {
 	coins = []
 
 	coinsList: TypeCoin[] = []
+
+	amountCoins: TypeAmount[] = []
+
 	constructor() {
 		makeAutoObservable(this)
+	}
+
+	addAmountCoins(item: {
+		key: string | undefined
+		name: string | undefined
+		amount: number | undefined
+		priceInp: number | undefined
+	}) {
+		this.amountCoins.push(item)
 	}
 
 	addCoin(item: {
