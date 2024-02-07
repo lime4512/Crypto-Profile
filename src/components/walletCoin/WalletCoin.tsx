@@ -30,7 +30,12 @@ export const WalletCoin = observer(() => {
 	]
 	return (
 		<section className='walletCoin'>
-			<Table dataSource={dataCoins} columns={columns} pagination={false} />
+			<Table
+				dataSource={dataCoins}
+				columns={columns}
+				pagination={false}
+				scroll={{ y: 240 }}
+			/>
 		</section>
 	)
 })
