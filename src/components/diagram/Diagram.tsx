@@ -27,11 +27,13 @@ export const Diagram = observer(() => {
 		],
 	}
 	return (
-		<section className='diagram'>
+		<section>
 			{StoreCoin.amountCoins.length != 0 ? (
-				<Pie data={data} />
+				<div className='diagram'>
+					<Pie data={data} />
+				</div>
 			) : (
-				<h1>Add coins to wallet</h1>
+				<></>
 			)}
 		</section>
 	)

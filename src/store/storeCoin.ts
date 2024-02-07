@@ -25,6 +25,7 @@ class StoreCoin {
 	amountCoins: TypeAmount[] = []
 
 	constructor() {
+		this.amountCoins = JSON.parse(localStorage.getItem('myData')!) || []
 		makeAutoObservable(this)
 	}
 
@@ -35,6 +36,7 @@ class StoreCoin {
 		priceInp: number | undefined
 	}) {
 		this.amountCoins.push(item)
+		localStorage.setItem('myData', JSON.stringify(this.amountCoins))
 	}
 
 	addCoin(item: {
