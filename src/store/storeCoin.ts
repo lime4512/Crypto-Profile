@@ -25,6 +25,7 @@ class StoreCoin {
 	amountCoins: TypeAmount[] = []
 
 	constructor() {
+		this.coinsList = JSON.parse(localStorage.getItem('myCoins')!) || []
 		this.amountCoins = JSON.parse(localStorage.getItem('myData')!) || []
 		makeAutoObservable(this)
 	}
@@ -49,6 +50,7 @@ class StoreCoin {
 		percent_change_24h: string | undefined
 	}) {
 		this.coinsList.push(item)
+		localStorage.setItem('myCoins', JSON.stringify(this.coinsList))
 	}
 
 	removeCoin(item: {
