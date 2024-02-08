@@ -18,10 +18,12 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 		const [amount, setAmount] = useState<number>()
 		const [priceInp, setPriceInp] = useState<number>()
 
+		const [validInp, setValidInp] = useState(false)
+
 		const handelAmount = (event: ChangeEvent<HTMLInputElement>) => {
 			setAmount(Number(event.target.value))
 		}
-
+		console.log(amount)
 		useEffect(() => {
 			const sunValue = Number((Number(amount) * Number(price)).toFixed(2))
 			setPriceInp(sunValue)
@@ -29,16 +31,21 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 
 		const handleSubmit = (e: React.FormEvent) => {
 			e.preventDefault()
-			const amountObj = {
-				key: Math.random.toString(),
-				name: name,
-				amount: amount,
-				priceInp: priceInp,
+			if (amount !== undefined && amount !== 0) {
+				const amountObj = {
+					key: Math.random.toString(),
+					name: name,
+					amount: amount,
+					priceInp: priceInp,
+				}
+				StoreCoin.addAmountCoins(amountObj)
+				onClose()
+				openNotificationWithIcon()
+				HandelDelCoin()
+				setValidInp(false)
+			} else {
+				setValidInp(true)
 			}
-			StoreCoin.addAmountCoins(amountObj)
-			onClose()
-			openNotificationWithIcon()
-			HandelDelCoin()
 		}
 
 		const [api, contextHolder] = notification.useNotification()
@@ -55,14 +62,18 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 				<form className='form-amount' onSubmit={handleSubmit}>
 					<div className='form-amount-content mb'>
 						<label className='form-label'>Amount:</label>
-						<input
-							type='number'
-							placeholder='Write amount'
-							value={amount || ''}
-							onChange={handelAmount}
-							className='form-inp'
-						/>
+						<div>
+							<input
+								type='number'
+								placeholder='Write amount'
+								value={amount || ''}
+								onChange={handelAmount}
+								className='form-inp'
+							/>
+							{validInp ? <p className='error-inp'>Enter the number</p> : <></>}
+						</div>
 					</div>
+
 					<div className='form-amount-content'>
 						<label className='form-label'>Price usd:</label>
 						<input

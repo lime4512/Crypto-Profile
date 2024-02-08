@@ -68,6 +68,11 @@ class StoreCoin {
 		}
 	}
 
+	get delAmountCoins() {
+		this.amountCoins.splice(0, this.amountCoins.length)
+		return localStorage.removeItem('myData')
+	}
+
 	getCoins = async () => {
 		axios
 			.get(
