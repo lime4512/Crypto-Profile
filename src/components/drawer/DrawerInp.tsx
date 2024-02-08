@@ -23,7 +23,6 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 		const handelAmount = (event: ChangeEvent<HTMLInputElement>) => {
 			setAmount(Number(event.target.value))
 		}
-		console.log(amount)
 		useEffect(() => {
 			const sunValue = Number((Number(amount) * Number(price)).toFixed(2))
 			setPriceInp(sunValue)
@@ -33,7 +32,6 @@ export const DrawerInp: FunctionComponent<Props> = observer(
 			e.preventDefault()
 			if (amount !== undefined && amount !== 0) {
 				const amountObj = {
-					key: Math.random.toString(),
 					name: name,
 					amount: amount,
 					priceInp: priceInp,

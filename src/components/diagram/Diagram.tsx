@@ -1,17 +1,18 @@
 import '../../style/diagram/diagram.scss'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Pie } from 'react-chartjs-2'
+import { DuplicateCoins } from '../../utils/DuplicateListCoin'
 import { observer } from 'mobx-react-lite'
-import StoreCoin from '../../store/storeCoin.ts'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 export const Diagram = observer(() => {
+	const dataDuplicate = DuplicateCoins()
 	const data = {
-		labels: StoreCoin.amountCoins.map(i => i.name),
+		labels: dataDuplicate.map(i => i.name),
 		datasets: [
 			{
 				label: 'Coins',
-				data: StoreCoin.amountCoins.map(i => i.amount),
+				data: dataDuplicate.map(i => i.amount),
 				backgroundColor: [
 					'rgb(225, 99, 132)',
 					'rgb(54, 162, 235)',
@@ -28,7 +29,7 @@ export const Diagram = observer(() => {
 	}
 	return (
 		<section>
-			{StoreCoin.amountCoins.length != 0 ? (
+			{dataDuplicate.length != 0 ? (
 				<div className='diagram'>
 					<Pie data={data} />
 				</div>

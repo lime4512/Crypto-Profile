@@ -3,6 +3,7 @@ import { FunctionComponent, useEffect, useState } from 'react'
 import '../../style/trackCoin/modalCoin.scss'
 import StoreCoin from '../../store/storeCoin'
 import { ModalInfo } from './ModalInfo'
+import { HeaderButton } from '../header/HeaderButton'
 
 type NotificationType = 'success' | 'info' | 'warning' | 'error'
 
@@ -75,13 +76,9 @@ export const ModalCoin: FunctionComponent<Props> = ({
 				open={open}
 				onCancel={handleCancel}
 				footer={[
-					<button
-						className='modalInfo-btn'
-						onClick={handelInfoCoin}
-						key='submit'
-					>
-						track currency
-					</button>,
+					<div className='modalInfo-btn' key='submit'>
+						<HeaderButton onClick={handelInfoCoin}>Track currency</HeaderButton>
+					</div>,
 				]}
 			>
 				<ModalInfo

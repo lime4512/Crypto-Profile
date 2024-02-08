@@ -35,7 +35,7 @@ export const CardCoin: FunctionComponent<Props> = observer(
 		item,
 	}) => {
 		return (
-			<li className='select-card' key={Math.random()}>
+			<li className='select-card'>
 				<div className='select-card-name-btn'>
 					<p className='select-card-name'>{name}</p>
 					<button

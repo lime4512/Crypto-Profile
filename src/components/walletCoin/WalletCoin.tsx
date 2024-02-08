@@ -3,13 +3,11 @@ import StoreCoin from '../../store/storeCoin'
 import { observer } from 'mobx-react-lite'
 import { Table } from 'antd'
 import { HeaderButton } from '../header/HeaderButton'
+import { DuplicateCoins } from '../../utils/DuplicateListCoin'
+
 export const WalletCoin = observer(() => {
-	const dataCoins = StoreCoin.amountCoins.map(item => ({
-		key: item.key,
-		name: item.name,
-		price: item.priceInp,
-		amount: item.amount,
-	}))
+	
+	const dataDuplicate = DuplicateCoins()
 
 	const columns = [
 		{
@@ -41,10 +39,10 @@ export const WalletCoin = observer(() => {
 			</div>
 
 			<Table
-				dataSource={dataCoins}
+				dataSource={dataDuplicate}
 				columns={columns}
 				pagination={false}
-				scroll={{ y: 240 }}
+				scroll={{ y: 248 }}
 			/>
 		</section>
 	)

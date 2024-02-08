@@ -1,9 +1,8 @@
 .modalInfo-btn {
-	padding: 10px 20px;
-	border-radius: 10px;
-	color: white;
+	display: flex;
+	justify-content: center;
+	font-size: 17px;
 }
-
 .modalInfo-title-cont {
 	display: flex;
 	align-items: center;
@@ -16,8 +15,6 @@
 		margin-left: 10px;
 	}
 }
-
-
 
 p {
 	margin-bottom: 10px;

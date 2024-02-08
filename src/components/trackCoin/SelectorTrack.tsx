@@ -10,6 +10,7 @@ export const SelectorTrack = observer(() => {
 				StoreCoin.coinsList.length <= 4 ? (
 					StoreCoin.coinsList.map(item => (
 						<CardCoin
+							key={Math.random()}
 							name={item.name}
 							price_usd={item.price_usd}
 							symbol={item.symbol}

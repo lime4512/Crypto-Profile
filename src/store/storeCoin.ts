@@ -12,7 +12,6 @@ type TypeCoin = {
 }
 
 type TypeAmount = {
-	key: string | undefined
 	name: string | undefined
 	amount: number | undefined
 	priceInp: number | undefined
@@ -31,7 +30,6 @@ class StoreCoin {
 	}
 
 	addAmountCoins(item: {
-		key: string | undefined
 		name: string | undefined
 		amount: number | undefined
 		priceInp: number | undefined
@@ -65,6 +63,7 @@ class StoreCoin {
 		const index = this.coinsList.indexOf(item)
 		if (index !== -1) {
 			this.coinsList.splice(index, 1)
+			localStorage.setItem('myCoins', JSON.stringify(this.coinsList))
 		}
 	}
 
