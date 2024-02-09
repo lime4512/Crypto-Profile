@@ -1,6 +1,18 @@
 .diagram {
 	display: flex;
-	max-height: 500px;
-	margin: 10px 0 0 0;
+	height: 500px;
+	margin-top: 10px;
 	justify-content: center;
+}
+
+@media (max-width: 430px) {
+	.diagram {
+		height: 400px;
+	}
+}
+
+@media (max-width: 360px) {
+	.diagram {
+		height: 300px;
+	}
 }

@@ -2,3 +2,9 @@
 	margin-top: 10px;
 	margin-right: 10px;
 }
+
+@media (max-width: 430px) {
+	.select-content {
+		margin-right: 0;
+	}
+}

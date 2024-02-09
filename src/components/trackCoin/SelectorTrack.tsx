@@ -25,7 +25,7 @@ export const SelectorTrack = observer(() => {
 					<CarouselCoin />
 				)
 			) : (
-				<li>Currency is not tracked</li>
+				<li></li>
 			)}
 		</ul>
 	)

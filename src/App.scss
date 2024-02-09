@@ -5,11 +5,23 @@
 
 main {
 	display: flex;
-	.main-TrackCoin {
-		width: 30%;
-	}
-
 	.main-coin {
-		width: 70%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 1596px) {
+	main {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 738px) {
+	.container {
+		margin: 0 10px;
+		padding: 0 5px;
+	}
+	.main-TrackCoin {
+		margin: 0 auto;
 	}
 }

@@ -6,7 +6,6 @@ import { HeaderButton } from '../header/HeaderButton'
 import { DuplicateCoins } from '../../utils/DuplicateListCoin'
 
 export const WalletCoin = observer(() => {
-	
 	const dataDuplicate = DuplicateCoins()
 
 	const columns = [
@@ -32,18 +31,20 @@ export const WalletCoin = observer(() => {
 	}
 	return (
 		<section className='walletCoin'>
-			<div className='btn-clear'>
-				{StoreCoin.amountCoins.length == 0 || (
-					<HeaderButton onClick={headerClear}>Clear</HeaderButton>
-				)}
-			</div>
+			<div className='walletCoin-block'>
+				<div className='btn-clear'>
+					{StoreCoin.amountCoins.length == 0 || (
+						<HeaderButton onClick={headerClear}>Clear</HeaderButton>
+					)}
+				</div>
 
-			<Table
-				dataSource={dataDuplicate}
-				columns={columns}
-				pagination={false}
-				scroll={{ y: 248 }}
-			/>
+				<Table
+					dataSource={dataDuplicate}
+					columns={columns}
+					pagination={false}
+					scroll={{ y: 248 }}
+				/>
+			</div>
 		</section>
 	)
 })

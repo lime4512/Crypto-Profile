@@ -1,5 +1,6 @@
 .trackCoin {
 	margin-top: 20px;
+	width: 450px;
 }
 
 .img-coin {
@@ -12,4 +13,14 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 10px;
+}
+
+@media (max-width: 430px) {
+	.trackCoin {
+		width: 300px;
+	}
+
+	.select-content {
+		margin-right: 0;
+	}
 }
