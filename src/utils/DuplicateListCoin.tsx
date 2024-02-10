@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import StoreCoin from '../store/storeCoin'
 
 interface Coin {
+	key?: number
 	name?: string
 	price?: number
 	amount?: number
@@ -34,6 +35,7 @@ export const DuplicateCoins = (): Coin[] => {
 			}
 			if (!found) {
 				tempResult.push({
+					key: Math.random(),
 					name: dataCoins[i].name || '',
 					price: dataCoins[i].price || 0,
 					amount: dataCoins[i].amount || 0,
