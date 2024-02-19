@@ -43,7 +43,7 @@ export const CardCoin: FunctionComponent<Props> = observer(
 						className='select-card-btn'
 					>
 						<img
-							src='Crypto-Profile/close_FILL0_wght400_GRAD0_opsz24 (1).svg'
+							src='/Crypto-Profile/close_FILL0_wght400_GRAD0_opsz24 (1).svg'
 							alt=''
 						/>
 					</button>
@@ -52,7 +52,7 @@ export const CardCoin: FunctionComponent<Props> = observer(
 					{symbol != undefined ? (
 						<img
 							className='select-card-img'
-							src={'Crypto-Profile/imgCoin/' + symbol.toLowerCase() + '.png'}
+							src={'/Crypto-Profile/imgCoin/' + symbol.toLowerCase() + '.png'}
 							alt=''
 						/>
 					) : (

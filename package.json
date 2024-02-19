@@ -1,7 +1,7 @@
 {
 	"name": "crypto-profile",
 	"private": true,
-	"homepage": "https://lime4512.github.io/Crypto-Profile/",
+	"homepage": "https://lime4512.github.io/Crypto-Profile",
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {

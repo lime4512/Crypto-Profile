@@ -40,7 +40,7 @@ export const TrackCoin = observer(() => {
 						<div className='space-content'>
 							<img
 								src={
-									'Crypto-Profile/imgCoin/' +
+									'/Crypto-Profile/imgCoin/' +
 									option.data.icon.toLowerCase() +
 									'.png'
 								}

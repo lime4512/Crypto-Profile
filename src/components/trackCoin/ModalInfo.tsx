@@ -27,7 +27,7 @@ export const ModalInfo: FunctionComponent<Props> = ({
 		<>
 			<div className='modalInfo-title-cont'>
 				<img
-					src={'Crypto-Profile/imgCoin/' + symbol?.toLowerCase() + '.png'}
+					src={'/Crypto-Profile/imgCoin/' + symbol?.toLowerCase() + '.png'}
 					alt=''
 					className='modalInfo-title-img'
 				/>
