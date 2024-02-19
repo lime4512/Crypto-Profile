@@ -58,7 +58,9 @@ export const DrawerWindow: FunctionComponent<Props> = observer(
 									<div className='space-content'>
 										<img
 											src={
-												'/imgCoin/' + option.data.icon.toLowerCase() + '.png'
+												'Crypto-Profile/imgCoin/' +
+												option.data.icon.toLowerCase() +
+												'.png'
 											}
 											alt=''
 											style={{ width: 20 }}

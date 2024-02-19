@@ -20,7 +20,9 @@ export const DrawerForm: FunctionComponent<Props> = ({
 		<div className='form'>
 			<div className='form-title-content'>
 				<img
-					src={'/imgCoin/' + dataCoin.symbol?.toLowerCase() + '.png'}
+					src={
+						'Crypto-Profile/imgCoin/' + dataCoin.symbol?.toLowerCase() + '.png'
+					}
 					alt=''
 					className='form-title-img'
 				/>

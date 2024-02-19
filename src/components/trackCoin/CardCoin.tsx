@@ -42,14 +42,17 @@ export const CardCoin: FunctionComponent<Props> = observer(
 						onClick={() => StoreCoin.removeCoin(item)}
 						className='select-card-btn'
 					>
-						<img src='/close_FILL0_wght400_GRAD0_opsz24 (1).svg' alt='' />
+						<img
+							src='Crypto-Profile/close_FILL0_wght400_GRAD0_opsz24 (1).svg'
+							alt=''
+						/>
 					</button>
 				</div>
 				<div className='select-card-total-price'>
 					{symbol != undefined ? (
 						<img
 							className='select-card-img'
-							src={'/imgCoin/' + symbol.toLowerCase() + '.png'}
+							src={'Crypto-Profile/imgCoin/' + symbol.toLowerCase() + '.png'}
 							alt=''
 						/>
 					) : (
